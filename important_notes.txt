@@ -1,0 +1,23 @@
+Realizado algumas configurações diferentes da passadas no curso, sendo:
+
+1. Trocado a porta da máquina host para 8585 do container Airflow, pois a porta 8080 já está sendo usado pelo Oracle
+
+2. Troca da imagem do MinIO para funcionar o botão de criar bucket
+	Comando: docker run --name minio -d -p 9000:9000 -p 9001:9001 -v "$PWD/datalake:/data" quay.io/minio/minio server /data --console-address ":9001"
+
+3. Instalações necessárias para rodas o arquivo analise.ipynb
+	!pip install minio
+	!pip install pyarrow
+
+4. Seção: Calculando a distribuição dos atributos (Arquivo analise.ipynb)
+	Ajustado o código de distplot para histplot, pois o distplot será descontinuado
+
+5. Instalação do PyCaret
+	Realizar instalação via CMD com acesso de administrador
+	Comando: pip install pycaret
+
+Dica:
+1. Verificar módulos instalados
+	Comando: pip list
+
+ 
